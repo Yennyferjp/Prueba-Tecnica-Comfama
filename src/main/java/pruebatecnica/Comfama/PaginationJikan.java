@@ -1,43 +1,28 @@
 package pruebatecnica.Comfama;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class PaginationJikan {
+    @JsonProperty("last_visible_page")
     private int lastVisiblePage;
+
+    @JsonProperty("has_next_page")
     private boolean hasNextPage;
+
+    @JsonProperty("current_page")
     private int currentPage;
+
+    @JsonProperty("items")
     private Items items;
 
     public PaginationJikan() {
     }
 
-    public PaginationJikan(int lastVisiblePage, boolean hasNextPage, int currentPage, Items items) {
-        this.lastVisiblePage = lastVisiblePage;
-        this.hasNextPage = hasNextPage;
-        this.currentPage = currentPage;
+    public PaginationJikan(int last_visible_page, boolean has_next_page, int current_page, Items items) {
+        this.lastVisiblePage = last_visible_page;
+        this.hasNextPage = has_next_page;
+        this.currentPage = current_page;
         this.items = items;
-    }
-
-    public int getLastVisiblePage() {
-        return lastVisiblePage;
-    }
-
-    public void setLastVisiblePage(int lastVisiblePage) {
-        this.lastVisiblePage = lastVisiblePage;
-    }
-
-    public boolean isHasNextPage() {
-        return hasNextPage;
-    }
-
-    public void setHasNextPage(boolean hasNextPage) {
-        this.hasNextPage = hasNextPage;
-    }
-
-    public int getCurrentPage() {
-        return currentPage;
-    }
-
-    public void setCurrentPage(int currentPage) {
-        this.currentPage = currentPage;
     }
 
     public Items getItems() {

@@ -1,7 +1,12 @@
 package pruebatecnica.Comfama;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Anime {
+    @JsonProperty("mal_id")
     private int malId;
     private String url;
     private Images images;
@@ -10,6 +15,20 @@ public class Anime {
     private double score;
     private String synopsis;
     private int year;
+
+    public Anime() {
+    }
+
+    public Anime(int mal_Id, String url, Images images, String title, String rating, double score, String synopsis, int year) {
+        this.malId = mal_Id;
+        this.url = url;
+        this.images = images;
+        this.title = title;
+        this.rating = rating;
+        this.score = score;
+        this.synopsis = synopsis;
+        this.year = year;
+    }
 
     public int getMalId() {
         return malId;
@@ -76,6 +95,7 @@ public class Anime {
     }
 }
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 class Images {
     private Image jpg;
 
@@ -95,14 +115,16 @@ class Images {
     }
 }
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 class Image {
+    @JsonProperty("image_url")
     private String imageUrl;
 
     public Image() {
     }
 
-    public Image(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public Image(String image_url) {
+        this.imageUrl = image_url;
     }
 
     public String getImageUrl() {

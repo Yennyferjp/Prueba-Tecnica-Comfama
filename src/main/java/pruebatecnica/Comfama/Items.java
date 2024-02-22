@@ -1,17 +1,21 @@
 package pruebatecnica.Comfama;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Items {
     private int count;
     private int total;
+
+    @JsonProperty("per_page")
     private int perPage;
 
     public Items() {
     }
 
-    public Items(int count, int total, int perPage) {
+    public Items(int count, int total, int per_page) {
         this.count = count;
         this.total = total;
-        this.perPage = perPage;
+        this.perPage = per_page;
     }
 
     public int getCount() {
