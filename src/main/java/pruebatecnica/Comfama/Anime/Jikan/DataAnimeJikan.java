@@ -1,4 +1,5 @@
-package pruebatecnica.Comfama;
+package pruebatecnica.Comfama.Anime.Jikan;
+
 import java.util.ArrayList;
 
 public class DataAnimeJikan {
@@ -28,5 +29,16 @@ public class DataAnimeJikan {
 
     public void setPagination(PaginationJikan pagination) {
         this.pagination = pagination;
+    }
+
+    public double getSeasonsScore(){
+        if(data.isEmpty()){
+            return 0;
+        }
+        double seasonsScoreSum = 0;
+        for (Anime datum : data) {
+            seasonsScoreSum += datum.getScore();
+        }
+        return seasonsScoreSum / data.size();
     }
 }

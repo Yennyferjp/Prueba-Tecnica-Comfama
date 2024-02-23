@@ -1,4 +1,4 @@
-package pruebatecnica.Comfama;
+package pruebatecnica.Comfama.Anime.Jikan;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -92,6 +92,16 @@ public class Anime {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    public String getRecommendation() {
+        if (score < 5) {
+            return   "I do not recommend it.";
+        } else if (score >= 5 && score <= 7) {
+           return "You may have fun.";
+        } else {
+            return "Great, this is one of the best anime.";
+        }
     }
 }
 
