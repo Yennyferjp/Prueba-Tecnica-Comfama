@@ -1,6 +1,7 @@
-package pruebatecnica.Comfama;
+package pruebatecnica.Comfama.Anime.Jikan;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import pruebatecnica.Comfama.Items;
 
 public class PaginationJikan {
     @JsonProperty("last_visible_page")
